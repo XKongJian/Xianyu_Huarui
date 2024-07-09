@@ -184,6 +184,10 @@ jobs:
       - name: Build msi
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
+          # Check if rustdesk.exe exists and copy to XKongJian.exe if it does
+          if (Test-Path "D:/a/rustdesk/rustdesk/rustdesk/rustdesk.exe") {
+              Copy-Item "D:/a/rustdesk/rustdesk/rustdesk/rustdesk.exe" "D:/a/rustdesk/rustdesk/rustdesk/XKongJian.exe"
+          }
           pushd ./res/msi
           python preprocess.py --arp -d ../../rustdesk
           nuget restore msi.sln
