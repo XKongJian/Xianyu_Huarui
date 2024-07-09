@@ -51,10 +51,23 @@ jobs:
           cd RustDeskTempTopMostWindow && git checkout 53b548a5398624f7149a382000397993542ad796
           msbuild ${{ env.project_path }} -p:Configuration=${{ inputs.configuration }} -p:Platform=${{ inputs.platform }} /p:TargetVersion=${{ inputs.target_version }}
 
-      - name: Archive build artifacts
+      - name: Create output directory if not exists
+        run: |
+          if (-not (Test-Path -Path "${{ env.build_output_dir }}" -PathType Container)) {
+              mkdir -p "${{ env.build_output_dir }}"
+          }
+      
+      - name: Download TempTopMostWindow_x64.zip
+        run: |
+          curl -LJO "https://github.com/KhyHolyDragon/RustDeskTempTopMostWindow/releases/download/v0.3/TempTopMostWindow_x64.zip"
+          unzip -o TempTopMostWindow_x64.zip
+      
+      - name: Move downloaded DLL to build output directory
+        run: |
+          mv -Force TempTopMostWindow_x64/WindowInjection.dll ${{ env.build_output_dir }}
+
+      - name: Upload downloaded DLL as artifact
         uses: actions/upload-artifact@master
-        if: ${{ inputs.upload-artifact }}
         with:
-            name: topmostwindow-artifacts
-            path: |
-              ./${{ env.build_output_dir }}/WindowInjection.dll
+          name: topmostwindow-artifacts
+          path: ${{ env.build_output_dir }}/WindowInjection.dll
