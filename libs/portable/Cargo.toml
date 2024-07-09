@@ -2,7 +2,7 @@
 name = "rustdesk-portable-packer"
 version = "1.2.7"
 edition = "2021"
-description = "RustDesk Remote Desktop"
+description = "BBH DESK Remote Assistance"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -19,9 +19,9 @@ native-windows-gui = {version = "1.0", default-features = false, features = ["an
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2024 Purslane Ltd. All rights reserved."
-ProductName = "RustDesk"
-OriginalFilename = "rustdesk.exe"
-FileDescription = "RustDesk Remote Desktop"
+ProductName = "BBHDesk"
+OriginalFilename = "bbhdesk.exe"
+FileDescription = "BBH DESK Remote Assistance"
 #ProductVersion = ""
 
 [target.'cfg(target_os="windows")'.build-dependencies]
