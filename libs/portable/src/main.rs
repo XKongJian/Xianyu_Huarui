@@ -118,13 +118,13 @@ fn setup(
     for file in reader.files.iter() {
         file.write_to_file(&dir);
     }
-    rename_file_if_exists(dir.to_str().unwrap(), "rustdesk.exe", "hhbdesk.exe");
+    rename_file_if_exists(dir.to_str().unwrap(), "rustdesk.exe", "bbhdesk.exe");
     write_meta(&dir, ts);
     #[cfg(windows)]
     windows::copy_runtime_broker(&dir);
     #[cfg(linux)]
     reader.configure_permission(&dir);
-    Some(dir.join("hhbdesk.exe")) 
+    Some(dir.join("bbhdesk.exe")) 
 }
 
 fn execute(path: PathBuf, args: Vec<String>, _ui: bool) {
