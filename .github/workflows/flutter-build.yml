@@ -185,8 +185,8 @@ jobs:
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
           # Check if rustdesk.exe exists and copy to BBHDesk.exe if it does
-          if (Test-Path "D:/a/rustdesk/rustdesk/rustdesk/rustdesk.exe") {
-              Copy-Item "D:/a/rustdesk/rustdesk/rustdesk/rustdesk.exe" "D:/a/rustdesk/rustdesk/rustdesk/BBHDesk.exe"
+          if (Test-Path "D:/a/Xianyu_Huarui/Xianyu_Huarui/rustdesk/rustdesk.exe") {
+              Copy-Item "D:/a/Xianyu_Huarui/Xianyu_Huarui/rustdesk/rustdesk.exe" "D:/a/Xianyu_Huarui/Xianyu_Huarui/rustdesk/BBHDesk.exe"
           }
           # Check if rustdesk.exe exists and copy to XKongJian.exe if it does
           pushd ./res/msi
