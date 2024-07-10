@@ -80,7 +80,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
           child: Offstage(
             offstage: !(!_svcStopped.value &&
                 stateGlobal.svcStatus.value == SvcStatus.ready &&
-                _svcIsUsingPublicServer.value),
+                true),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -131,7 +131,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
             if (!isIncomingOnly) startServiceWidget(),
             // ready && public
             // No need to show the guide if is custom client.
-            if (true) setupServerWidget(),
+            if (!isIncomingOnly) setupServerWidget(),
           ],
         );
 
