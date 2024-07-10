@@ -174,7 +174,7 @@ exclude = ["vdi/host", "examples/custom_plugin"]
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2024 Purslane Ltd. All rights reserved."
-ProductName = "BBHDesk"
+ProductName = "RustDesk"
 FileDescription = "BBH DESK Remote Assistance"
 OriginalFilename = "bbhdesk.exe"
 
