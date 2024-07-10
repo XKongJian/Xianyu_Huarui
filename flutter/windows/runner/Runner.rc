@@ -92,10 +92,10 @@ BEGIN
             VALUE "CompanyName", "Purslane Ltd" "\0"
             VALUE "FileDescription", "BBH DESK Remote Assistance" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "bbhdesk" "\0"
+            VALUE "InternalName", "rustdesk" "\0"
             VALUE "LegalCopyright", "Copyright © 2024 Purslane Ltd. All rights reserved." "\0"
             VALUE "OriginalFilename", "bbhdesk.exe" "\0"
-            VALUE "ProductName", "BBH DESK" "\0"
+            VALUE "ProductName", "RustDesk" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
